@@ -1,5 +1,11 @@
 import React from 'react'
 
+import MyStatelessComponent from './MyStatelessComponent'
+
+function Hello(props) {
+  return <h1>Ahoy! {props.name}</h1>
+}
+
 class HelloApp extends React.Component {
   constructor(props) {
     super(props)
@@ -20,10 +26,15 @@ class HelloApp extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Ahoy! React</h1>
+        <Hello name="Chai" />
         <p>{this.props.message}</p>
         <button onClick={this.handleClick}>Click me!</button>
         <p>Total click : {this.state.counter}</p>
+
+        <MyStatelessComponent
+          title="Stateless"
+          message="Example of Stateless Component"
+        />
       </React.Fragment>
     )
   }
